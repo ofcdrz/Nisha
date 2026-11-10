@@ -1,0 +1,53 @@
+*{box-sizing:border-box}
+:root{--pink:#ff2e70;--pink2:#ff6b9b;--white:#fff8fc;--glass:rgba(31,15,35,.48)}
+html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif;color:var(--white)}
+body{min-height:100vh;overflow-x:hidden;background:#170f27}
+.backdrop{position:fixed;inset:0;background:linear-gradient(180deg,rgba(14,10,30,.32),rgba(28,10,28,.18) 52%,rgba(13,8,22,.5)),url("proposal-bg.png") center 48%/cover no-repeat;z-index:-3;transform:scale(1.02)}
+.backdrop:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 28%,transparent 0,rgba(12,7,24,.08) 55%,rgba(10,6,18,.38) 100%)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E")}
+.topbar{height:76px;padding:0 clamp(20px,6vw,88px);display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+.brand{color:white;text-decoration:none;font-size:19px;font-weight:700;letter-spacing:-.4px;display:flex;align-items:center;gap:11px}
+.brand-heart{font-size:36px;line-height:1;color:#ff4f87;text-shadow:0 0 18px #ff2e70}
+.music-toggle{border:1px solid rgba(255,130,170,.5);background:rgba(31,17,42,.48);color:white;border-radius:30px;padding:9px 13px 9px 16px;display:flex;align-items:center;gap:9px;font:600 14px "DM Sans";cursor:pointer;backdrop-filter:blur(12px)}
+.music-toggle i{width:34px;height:19px;border-radius:20px;background:#615061;position:relative;transition:.25s}
+.music-toggle i:after{content:"";position:absolute;width:15px;height:15px;top:2px;left:2px;border-radius:50%;background:#fff;transition:.25s}
+.music-toggle[aria-pressed="true"] i{background:var(--pink)}
+.music-toggle[aria-pressed="true"] i:after{left:17px}
+.scene{min-height:calc(100vh - 76px);display:flex;align-items:flex-start;justify-content:center;padding:clamp(42px,8vh,90px) 20px 70px;position:relative}
+.proposal-card{width:min(760px,100%);text-align:center;position:relative;padding:20px 24px 34px;animation:rise .9s ease both}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700;color:#ffb5ce;margin:0 0 13px;opacity:.9}
+h1{font-family:"Great Vibes",cursive;font-size:clamp(76px,10vw,126px);line-height:.88;font-weight:400;margin:0 auto 25px;color:#fff0f7;text-shadow:0 0 10px rgba(255,91,148,.45),0 0 36px rgba(255,35,108,.35);position:relative;z-index:1}
+.title-heart{font-family:"DM Sans";font-size:.52em;display:inline-block;vertical-align:middle;filter:drop-shadow(0 0 13px #ff2d70);animation:beat 1.25s infinite}
+.heart-outline{position:absolute;width:420px;height:310px;border:1.5px solid rgba(255,76,130,.7);border-radius:50%;left:50%;top:-33px;transform:translateX(-50%) rotate(-8deg);filter:drop-shadow(0 0 14px #ff2e70);opacity:.52;pointer-events:none}
+.message{font-size:clamp(15px,2vw,20px);line-height:1.65;color:#fff4fa;margin:0 auto 28px;text-shadow:0 2px 12px #25112d}
+.message span{color:#ff5e9a}
+.actions{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.btn{min-width:190px;border-radius:50px;padding:15px 28px;font:700 18px "DM Sans";cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;color:white}
+.btn:hover{transform:translateY(-3px)}
+.btn-yes{border:1px solid #ffb3cc;background:linear-gradient(135deg,#ff2e70,#e91661);box-shadow:0 0 0 4px rgba(255,54,116,.12),0 0 30px rgba(255,32,105,.5)}
+.btn-yes:hover{box-shadow:0 0 0 5px rgba(255,54,116,.16),0 0 42px rgba(255,32,105,.72)}
+.btn-yes span{font-size:26px;vertical-align:-2px;margin-right:6px}
+.btn-no{border:1.5px solid rgba(255,239,247,.9);background:rgba(39,22,44,.35);backdrop-filter:blur(10px)}
+.btn-no:hover{background:rgba(255,255,255,.12)}
+.tiny-note{font-size:11px;letter-spacing:.7px;color:rgba(255,226,238,.7);margin-top:30px}
+.floating-hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float-heart{position:absolute;bottom:-40px;color:#ff4c85;opacity:0;animation:floatUp linear forwards;text-shadow:0 0 12px #ff2e70}
+.modal{position:fixed;inset:0;background:rgba(12,6,20,.65);backdrop-filter:blur(12px);display:grid;place-items:center;padding:20px;z-index:5;opacity:0;visibility:hidden;transition:.28s}
+.modal.open{opacity:1;visibility:visible}
+.modal-card{width:min(470px,100%);text-align:center;padding:38px 30px 32px;border:1px solid rgba(255,137,177,.7);border-radius:28px;background:linear-gradient(145deg,rgba(76,34,61,.9),rgba(28,16,39,.94));box-shadow:0 20px 80px rgba(0,0,0,.35),0 0 35px rgba(255,47,113,.17);position:relative;transform:translateY(18px) scale(.97);transition:.3s}
+.modal.open .modal-card{transform:translateY(0) scale(1)}
+.close{position:absolute;right:17px;top:12px;border:0;background:none;color:white;font-size:28px;cursor:pointer;opacity:.8}
+.big-emoji{font-size:54px;animation:beat 1.2s infinite}
+.script{font:42px "Great Vibes",cursive;color:#ffb5ce;margin:8px 0}
+.modal h2{font-size:25px;line-height:1.25;margin:8px 0 12px}
+.modal-copy{font-size:14px;line-height:1.7;color:#f7dce8;margin:0 auto 23px;max-width:350px}
+.modal-action{min-width:230px;font-size:15px}
+.modal-actions{gap:10px}
+.modal-actions .btn{min-width:135px;padding:12px 17px;font-size:14px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;background:rgba(39,18,43,.9);border:1px solid rgba(255,130,170,.55);padding:12px 18px;border-radius:30px;font-size:13px;transition:.25s;z-index:4;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+@keyframes floatUp{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.8}85%{opacity:.65}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+@media(max-width:600px){.topbar{height:66px;padding:0 17px}.brand{font-size:15px}.brand-heart{font-size:29px}.music-toggle{font-size:12px;padding:7px 9px 7px 12px}.scene{min-height:calc(100vh - 66px);padding:10vh 14px 45px}.proposal-card{padding:20px 8px 30px}.eyebrow{font-size:9px;letter-spacing:2px}h1{font-size:clamp(66px,18vw,94px);margin-bottom:22px}.heart-outline{width:290px;height:235px;top:-15px}.message{font-size:15px;margin-bottom:25px}.desktop-only{display:none}.actions{gap:12px}.btn{min-width:145px;padding:13px 20px;font-size:15px}.tiny-note{font-size:10px}.modal-card{padding:34px 21px 27px}.modal h2{font-size:22px}.modal-actions .btn{min-width:120px}.backdrop{background-position:54% center}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
