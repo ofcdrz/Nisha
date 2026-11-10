@@ -22,10 +22,10 @@ function renderMemory(){
  document.getElementById("photoCaption").textContent=n.caption;
  document.getElementById("stepLabel").textContent=`YAAD ${current+1} / 4`;
  document.getElementById("progressFill").style.width=`${(current+1)*25}%`;
- document.getElementById("nextMemory").innerHTML=current===3?"Love game khelo ♡":"Agli yaad dekho <span>→</span>";
+ document.getElementById("nextMemory").innerHTML=current===3?"Cake cut karein ♡":"Agli yaad dekho <span>→</span>";
 }
 document.getElementById("begin").addEventListener("click",()=>{current=0;renderMemory();showPage("memories");});
-document.getElementById("nextMemory").addEventListener("click",()=>{if(current<3){current++;renderMemory();}else{resetGame();showPage("game");}});
+document.getElementById("nextMemory").addEventListener("click",()=>{if(current<3){current++;renderMemory();}else{showPage("game");}});
 document.getElementById("openAlbum").addEventListener("click",()=>showPage("album"));
 document.getElementById("backToWish").addEventListener("click",()=>showPage("final"));
 
