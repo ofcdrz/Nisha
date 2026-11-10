@@ -1,6 +1,6 @@
-NISHA PIXEL PROPOSAL WEBSITE
+NISHA BIRTHDAY WEBSITE — 14 DECEMBER
 
-Upload index.html, style.css and script.js to the root of your GitHub repository.
+Upload index.html, style.css, script.js and the photos folder to the root of your GitHub repository.
+Do not rename or separate the files. Keep photos/nisha-1.webp through nisha-4.webp together.
 GitHub Pages: Settings > Pages > Deploy from a branch > main > /(root) > Save.
-The website uses a retro pink pixel-art style, an opening inbox message, a YES/NO proposal, a YAY celebration and a date picker with Dinner, Movie and Picnic options.
-Edit Nisha's name and messages in index.html to personalize it.
+Flow: welcome page > four photo memories with individual notes > mini heart-catching game > birthday wish > four-photo album.

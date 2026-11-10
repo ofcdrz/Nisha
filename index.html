@@ -2,96 +2,106 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffb8d4">
-<title>A little question for Nisha 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#3b172b">
+<title>Happy Birthday Nisha ♡</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="pixel-sky" aria-hidden="true"><span>♡</span><span>✦</span><span>♡</span><span>✧</span><span>♡</span><span>✦</span></div>
-<header class="top"><div class="pixel-logo">NISHA.EXE <span>♥</span></div><div class="top-right"><span class="status-dot"></span> PLAYER 1 ONLINE</div></header>
+<div class="ambient"></div>
+<header class="site-header">
+  <a class="brand" href="#" aria-label="Nisha's birthday">for Nisha <span>♡</span></a>
+  <span class="date-tag">14 DECEMBER</span>
+</header>
 
-<main class="wrap">
-  <section class="screen active" id="intro">
-    <div class="mail-window">
-      <div class="window-bar"><span>INBOX.exe</span><span>□ ×</span></div>
-      <div class="mail-content">
-        <div class="mail-icon">✉</div>
-        <p class="micro">YOU HAVE 1 NEW MESSAGE</p>
-        <h1>Open pls...</h1>
-        <p class="mail-from">FROM: someone who likes you ♡</p>
-        <button class="pixel-btn primary" id="openMail">OPEN MESSAGE <span>▶</span></button>
-      </div>
+<main>
+  <section class="page active" id="welcome">
+    <div class="welcome-card">
+      <div class="sparkle">✦ &nbsp; ✧ &nbsp; ✦</div>
+      <p class="eyebrow">A LITTLE SURPRISE IS WAITING</p>
+      <h1>For someone<br>who makes life<br><em>more beautiful.</em></h1>
+      <p class="intro-copy">Nisha, this little corner of the internet<br>was made especially for you.</p>
+      <button class="btn btn-primary" id="begin">Open your surprise <span>♡</span></button>
+      <p class="small-note">A little love, one page at a time.</p>
     </div>
-    <p class="hint">psst... this message is definitely not a virus.</p>
   </section>
 
-  <section class="screen" id="ask">
-    <div class="game-window">
-      <div class="window-bar"><span>LOVE_QUEST.exe</span><span>♥ ♥ ♥</span></div>
-      <div class="game-content">
-        <div class="pixel-bear" aria-hidden="true">ʕ♡ᴥ♡ʔ</div>
-        <p class="micro">A VERY IMPORTANT QUESTION</p>
-        <h1> Nisha,<br>will you go out<br>with me? <span class="blinking">_</span></h1>
-        <p class="sub">I promise good food, silly jokes<br>and a really lovely time. 💗</p>
-        <div class="choice-row">
-          <button class="pixel-btn primary" id="yes">YES! ♥</button>
-          <button class="pixel-btn secondary" id="no">NO...</button>
+  <section class="page" id="memories">
+    <div class="memory-layout">
+      <div class="memory-photo-wrap">
+        <div class="photo-count" id="photoCount">01 / 04</div>
+        <img id="memoryPhoto" src="photos/nisha-1.webp" alt="Nisha — memory 1">
+        <div class="photo-caption">A moment worth keeping ♡</div>
+      </div>
+      <div class="memory-message">
+        <p class="eyebrow" id="memoryEyebrow">A LITTLE NOTE FOR YOU · 01</p>
+        <p class="script-word">Dear Nisha,</p>
+        <h2 id="memoryTitle">Your smile makes<br>ordinary days special.</h2>
+        <p class="memory-copy" id="memoryCopy">Some people bring a little extra warmth wherever they go. You have that kind of magic. Keep smiling and being your lovely self.</p>
+        <div class="progress"><span id="progressFill"></span></div>
+        <div class="memory-controls">
+          <span class="step-label" id="stepLabel">MEMORY 1 OF 4</span>
+          <button class="btn btn-primary" id="nextMemory">Next memory <span>→</span></button>
         </div>
-        <p class="tiny">CHOOSE WISELY, PLAYER 1</p>
       </div>
     </div>
   </section>
 
-  <section class="screen" id="yay">
-    <div class="game-window yay-window">
-      <div class="window-bar"><span>QUEST COMPLETE!</span><span>★ ★ ★</span></div>
-      <div class="game-content">
-        <div class="big-heart">♥</div>
-        <p class="micro">ACHIEVEMENT UNLOCKED</p>
-        <h1 class="yay-title">YAY!!!</h1>
-        <p class="sub">You just made me the happiest<br>person in the whole world!</p>
-        <div class="confetti-line">✦ ♥ ✧ ♥ ✦</div>
-        <button class="pixel-btn primary" id="plan">LET'S PLAN OUR DATE →</button>
+  <section class="page" id="game">
+    <div class="game-card">
+      <p class="eyebrow">A TINY BIRTHDAY GAME</p>
+      <h2>Catch the hearts<br><em>for Nisha!</em></h2>
+      <p class="game-intro">Tap the floating hearts and collect 10 of them to unlock your birthday wish.</p>
+      <div class="game-stats"><span>HEARTS COLLECTED</span><strong><b id="score">0</b> / 10</strong></div>
+      <div class="play-area" id="playArea" aria-label="Tap the floating hearts to collect them">
+        <div class="game-hint" id="gameHint">Tap a heart to catch it ♡</div>
+      </div>
+      <div class="game-bottom">
+        <span id="gameStatus">Ready when you are!</span>
+        <button class="btn btn-primary" id="startGame">Start game</button>
       </div>
     </div>
   </section>
 
-  <section class="screen" id="date">
-    <div class="game-window date-window">
-      <div class="window-bar"><span>DATE_PLANNER.exe</span><span>♥</span></div>
-      <div class="game-content">
-        <p class="micro">LEVEL 02 — THE FUN PART</p>
-        <h1 class="date-title">Pick our first<br>little adventure!</h1>
-        <div class="date-options">
-          <button class="date-option" data-choice="Dinner date 🍝"><span class="option-icon">🍝</span><span><b>DINNER DATE</b><small>Good food & long talks</small></span><i>→</i></button>
-          <button class="date-option" data-choice="Movie date 🎬"><span class="option-icon">🎬</span><span><b>MOVIE DATE</b><small>Popcorn, please!</small></span><i>→</i></button>
-          <button class="date-option" data-choice="Picnic date 🧺"><span class="option-icon">🧺</span><span><b>PICNIC DATE</b><small>Sunshine & sweet moments</small></span><i>→</i></button>
-        </div>
-        <p class="tiny">YOU CAN'T PICK A WRONG ANSWER ♡</p>
-      </div>
+  <section class="page" id="final">
+    <div class="final-card">
+      <div class="final-sparkle">✦</div>
+      <p class="eyebrow">14 DECEMBER · YOUR SPECIAL DAY</p>
+      <p class="final-script">Happy Birthday</p>
+      <h1>Nisha <span>♡</span></h1>
+      <p class="final-message">May your days be filled with genuine smiles, peaceful moments, beautiful surprises and people who make you feel loved. May this new year of your life bring you closer to every dream you're holding in your heart.</p>
+      <p class="wish-line">Keep shining. Keep smiling. Keep being you. ♡</p>
+      <button class="btn btn-primary" id="openAlbum">Open our little photo album <span>↗</span></button>
     </div>
   </section>
 
-  <section class="screen" id="finish">
-    <div class="game-window">
-      <div class="window-bar"><span>DATE_SAVED.exe</span><span>♥</span></div>
-      <div class="game-content">
-        <div class="big-heart">💗</div>
-        <p class="micro">NEW MEMORY INCOMING</p>
-        <h1 class="yay-title">IT'S A DATE!</h1>
-        <p class="sub">Our plan: <strong id="chosenDate"></strong></p>
-        <p class="sub">Now all that's left is to make<br>this a day to remember. ✨</p>
-        <button class="pixel-btn secondary" id="restart">PLAY AGAIN ↻</button>
-      </div>
+  <section class="page" id="album">
+    <div class="album-heading">
+      <p class="eyebrow">A FEW MOMENTS, A LOT OF MEMORIES</p>
+      <h2>Nisha's little album <span>♡</span></h2>
+      <p>Four pictures. Countless reasons to smile.</p>
     </div>
+    <div class="album-grid">
+      <button class="album-item" data-photo="0"><img src="photos/nisha-1.webp" alt="Nisha portrait 1"><span>01 · A lovely moment</span></button>
+      <button class="album-item" data-photo="1"><img src="photos/nisha-2.webp" alt="Nisha portrait 2"><span>02 · A beautiful smile</span></button>
+      <button class="album-item" data-photo="2"><img src="photos/nisha-3.webp" alt="Nisha photo collage"><span>03 · Little details</span></button>
+      <button class="album-item" data-photo="3"><img src="photos/nisha-4.webp" alt="Nisha portrait 4"><span>04 · Simply you</span></button>
+    </div>
+    <button class="btn btn-outline" id="backToWish">Back to birthday wish</button>
   </section>
 </main>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<footer>MADE WITH <span>♥</span> JUST FOR YOU, NISHA</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="closeLightbox" aria-label="Close photo">×</button>
+  <button class="lightbox-arrow prev" id="prevPhoto" aria-label="Previous photo">‹</button>
+  <img id="lightboxImage" src="" alt="Selected Nisha photo">
+  <button class="lightbox-arrow next" id="nextPhoto" aria-label="Next photo">›</button>
+  <span id="lightboxCount"></span>
+</div>
+<footer>MADE WITH CARE, JUST FOR NISHA <span>♡</span></footer>
 <script src="script.js"></script>
 </body>
 </html>
