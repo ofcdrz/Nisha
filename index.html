@@ -1,72 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#180f27">
-  <title>A Special Proposal ❤️</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffb8d4">
+<title>A little question for Nisha 💗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="backdrop"></div>
-  <div class="grain"></div>
-  <header class="topbar">
-    <a class="brand" href="#"><span class="brand-heart">♡</span> A Special Proposal</a>
-    <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false">♫ <span>Music</span><i></i></button>
-  </header>
+<div class="pixel-sky" aria-hidden="true"><span>♡</span><span>✦</span><span>♡</span><span>✧</span><span>♡</span><span>✦</span></div>
+<header class="top"><div class="pixel-logo">NISHA.EXE <span>♥</span></div><div class="top-right"><span class="status-dot"></span> PLAYER 1 ONLINE</div></header>
 
-  <main class="scene">
-    <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
-    <section class="proposal-card" id="proposalCard">
-      <div class="heart-outline" aria-hidden="true"></div>
-      <p class="eyebrow">A little question from my heart</p>
-      <h1>Will You Be<br>Mine? <span class="title-heart">❤️</span></h1>
-      <p class="message">I really like you and feel a special connection with you.<br class="desktop-only"> Would you like to be with me? <span>💕</span></p>
-      <div class="actions">
-        <button class="btn btn-yes" id="yesBtn" type="button"><span>♡</span> Yes ✨</button>
-        <button class="btn btn-no" id="noBtn" type="button">No 🥺</button>
-      </div>
-      <p class="tiny-note">Made with a little courage and a lot of love.</p>
-    </section>
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  </main>
-
-  <div class="modal" id="yesModal" aria-hidden="true">
-    <div class="modal-card celebration">
-      <button class="close" data-close="yesModal" aria-label="Close">×</button>
-      <div class="big-emoji">🥰</div>
-      <p class="script">You said yes!</p>
-      <h2>You Made Me the<br>Happiest Person! ❤️</h2>
-      <p class="modal-copy">This is the beginning of something beautiful. Here's to smiles, memories and countless little moments together. 💖</p>
-      <button class="btn btn-yes modal-action" id="loveBtn" type="button">I Love You Too! 💕</button>
-    </div>
-  </div>
-
-  <div class="modal" id="noModal" aria-hidden="true">
-    <div class="modal-card reconsider">
-      <button class="close" data-close="noModal" aria-label="Close">×</button>
-      <div class="big-emoji">🥺</div>
-      <h2>Are you sure?</h2>
-      <p class="modal-copy">Think again... maybe give my heart one little chance? 💗</p>
-      <div class="actions modal-actions">
-        <button class="btn btn-yes" id="maybeYes" type="button">Okay, Yes 💖</button>
-        <button class="btn btn-no" id="stillNo" type="button">Still No</button>
+<main class="wrap">
+  <section class="screen active" id="intro">
+    <div class="mail-window">
+      <div class="window-bar"><span>INBOX.exe</span><span>□ ×</span></div>
+      <div class="mail-content">
+        <div class="mail-icon">✉</div>
+        <p class="micro">YOU HAVE 1 NEW MESSAGE</p>
+        <h1>Open pls...</h1>
+        <p class="mail-from">FROM: someone who likes you ♡</p>
+        <button class="pixel-btn primary" id="openMail">OPEN MESSAGE <span>▶</span></button>
       </div>
     </div>
-  </div>
+    <p class="hint">psst... this message is definitely not a virus.</p>
+  </section>
 
-  <div class="modal" id="loveModal" aria-hidden="true">
-    <div class="modal-card celebration">
-      <button class="close" data-close="loveModal" aria-label="Close">×</button>
-      <div class="big-emoji">💞</div>
-      <p class="script">Forever starts here</p>
-      <h2>One yes. A thousand<br>beautiful memories.</h2>
-      <p class="modal-copy">Thank you for making this moment unforgettable. ❤️</p>
+  <section class="screen" id="ask">
+    <div class="game-window">
+      <div class="window-bar"><span>LOVE_QUEST.exe</span><span>♥ ♥ ♥</span></div>
+      <div class="game-content">
+        <div class="pixel-bear" aria-hidden="true">ʕ♡ᴥ♡ʔ</div>
+        <p class="micro">A VERY IMPORTANT QUESTION</p>
+        <h1> Nisha,<br>will you go out<br>with me? <span class="blinking">_</span></h1>
+        <p class="sub">I promise good food, silly jokes<br>and a really lovely time. 💗</p>
+        <div class="choice-row">
+          <button class="pixel-btn primary" id="yes">YES! ♥</button>
+          <button class="pixel-btn secondary" id="no">NO...</button>
+        </div>
+        <p class="tiny">CHOOSE WISELY, PLAYER 1</p>
+      </div>
     </div>
-  </div>
-  <script src="script.js"></script>
+  </section>
+
+  <section class="screen" id="yay">
+    <div class="game-window yay-window">
+      <div class="window-bar"><span>QUEST COMPLETE!</span><span>★ ★ ★</span></div>
+      <div class="game-content">
+        <div class="big-heart">♥</div>
+        <p class="micro">ACHIEVEMENT UNLOCKED</p>
+        <h1 class="yay-title">YAY!!!</h1>
+        <p class="sub">You just made me the happiest<br>person in the whole world!</p>
+        <div class="confetti-line">✦ ♥ ✧ ♥ ✦</div>
+        <button class="pixel-btn primary" id="plan">LET'S PLAN OUR DATE →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="date">
+    <div class="game-window date-window">
+      <div class="window-bar"><span>DATE_PLANNER.exe</span><span>♥</span></div>
+      <div class="game-content">
+        <p class="micro">LEVEL 02 — THE FUN PART</p>
+        <h1 class="date-title">Pick our first<br>little adventure!</h1>
+        <div class="date-options">
+          <button class="date-option" data-choice="Dinner date 🍝"><span class="option-icon">🍝</span><span><b>DINNER DATE</b><small>Good food & long talks</small></span><i>→</i></button>
+          <button class="date-option" data-choice="Movie date 🎬"><span class="option-icon">🎬</span><span><b>MOVIE DATE</b><small>Popcorn, please!</small></span><i>→</i></button>
+          <button class="date-option" data-choice="Picnic date 🧺"><span class="option-icon">🧺</span><span><b>PICNIC DATE</b><small>Sunshine & sweet moments</small></span><i>→</i></button>
+        </div>
+        <p class="tiny">YOU CAN'T PICK A WRONG ANSWER ♡</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="finish">
+    <div class="game-window">
+      <div class="window-bar"><span>DATE_SAVED.exe</span><span>♥</span></div>
+      <div class="game-content">
+        <div class="big-heart">💗</div>
+        <p class="micro">NEW MEMORY INCOMING</p>
+        <h1 class="yay-title">IT'S A DATE!</h1>
+        <p class="sub">Our plan: <strong id="chosenDate"></strong></p>
+        <p class="sub">Now all that's left is to make<br>this a day to remember. ✨</p>
+        <button class="pixel-btn secondary" id="restart">PLAY AGAIN ↻</button>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<footer>MADE WITH <span>♥</span> JUST FOR YOU, NISHA</footer>
+<script src="script.js"></script>
 </body>
 </html>

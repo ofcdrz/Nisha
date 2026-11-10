@@ -1,116 +1,43 @@
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const maybeYes = document.getElementById("maybeYes");
-const stillNo = document.getElementById("stillNo");
-const loveBtn = document.getElementById("loveBtn");
-const musicToggle = document.getElementById("musicToggle");
-const toast = document.getElementById("toast");
-
-function openModal(id) {
-  const modal = document.getElementById(id);
-  modal.classList.add("open");
-  modal.setAttribute("aria-hidden", "false");
+const screens = ["intro","ask","yay","date","finish"];
+function show(id){
+  screens.forEach(name=>document.getElementById(name).classList.toggle("active",name===id));
+  window.scrollTo({top:0,behavior:"smooth"});
 }
-function closeModal(id) {
-  const modal = document.getElementById(id);
-  modal.classList.remove("open");
-  modal.setAttribute("aria-hidden", "true");
+const toast=document.getElementById("toast");
+function notify(message){
+  toast.textContent=message;toast.classList.add("show");
+  window.setTimeout(()=>toast.classList.remove("show"),1900);
 }
-document.querySelectorAll("[data-close]").forEach(button => {
-  button.addEventListener("click", () => closeModal(button.dataset.close));
+document.getElementById("openMail").addEventListener("click",()=>show("ask"));
+document.getElementById("yes").addEventListener("click",()=>{show("yay");sprinkle();});
+document.getElementById("no").addEventListener("click",()=>{
+  notify("Oops! That button seems a little shy 🙈 Try again?"); 
+  const button=document.getElementById("no");
+  button.textContent="ARE YOU SURE?";
+  button.animate([{transform:"translateX(0)"},{transform:"translateX(-5px)"},{transform:"translateX(5px)"},{transform:"translateX(0)"}],{duration:260});
 });
-document.querySelectorAll(".modal").forEach(modal => {
-  modal.addEventListener("click", event => {
-    if (event.target === modal) closeModal(modal.id);
+document.getElementById("plan").addEventListener("click",()=>show("date"));
+document.querySelectorAll(".date-option").forEach(option=>{
+  option.addEventListener("click",()=>{
+    document.querySelectorAll(".date-option").forEach(item=>item.classList.remove("selected"));
+    option.classList.add("selected");
+    document.getElementById("chosenDate").textContent=option.dataset.choice;
+    window.setTimeout(()=>show("finish"),220);
+    sprinkle();
   });
 });
-yesBtn.addEventListener("click", () => {
-  openModal("yesModal");
-  burstHearts(34);
+document.getElementById("restart").addEventListener("click",()=>{
+  document.getElementById("no").textContent="NO...";
+  show("intro");
 });
-noBtn.addEventListener("click", () => openModal("noModal"));
-maybeYes.addEventListener("click", () => {
-  closeModal("noModal");
-  openModal("yesModal");
-  burstHearts(34);
-});
-stillNo.addEventListener("click", () => {
-  closeModal("noModal");
-  showToast("Thank you for being honest. ❤️");
-});
-loveBtn.addEventListener("click", () => {
-  closeModal("yesModal");
-  openModal("loveModal");
-  burstHearts(50);
-});
-
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add("show");
-  window.setTimeout(() => toast.classList.remove("show"), 2600);
-}
-
-const heartLayer = document.getElementById("floatingHearts");
-function makeHeart() {
-  const heart = document.createElement("span");
-  heart.className = "float-heart";
-  heart.textContent = ["♥", "♡", "❤", "💕"][Math.floor(Math.random() * 4)];
-  heart.style.left = `${Math.random() * 100}%`;
-  heart.style.fontSize = `${12 + Math.random() * 23}px`;
-  heart.style.animationDuration = `${7 + Math.random() * 7}s`;
-  heartLayer.appendChild(heart);
-  window.setTimeout(() => heart.remove(), 14500);
-}
-function burstHearts(count) {
-  for (let i = 0; i < count; i++) {
-    window.setTimeout(makeHeart, i * 55);
+function sprinkle(){
+  const symbols=["♥","✦","✧","♡"];
+  for(let i=0;i<16;i++){
+    const bit=document.createElement("span");
+    bit.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    Object.assign(bit.style,{position:"fixed",left:Math.random()*100+"vw",top:"-25px",zIndex:9,pointerEvents:"none",color:"#ed4f91",fontSize:(16+Math.random()*18)+"px"});
+    document.body.appendChild(bit);
+    bit.animate([{transform:"translateY(0) rotate(0)",opacity:1},{transform:`translateY(${innerHeight+70}px) rotate(${Math.random()*260}deg)`,opacity:0}],{duration:1700+Math.random()*900,easing:"ease-in"});
+    window.setTimeout(()=>bit.remove(),2800);
   }
 }
-window.setInterval(makeHeart, 850);
-
-// A gentle synthesized chime; no external audio file is required.
-let audioContext = null;
-let musicOn = false;
-let chimeTimer = null;
-function playChime() {
-  if (!musicOn) return;
-  try {
-    audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
-    const now = audioContext.currentTime;
-    [523.25, 659.25, 783.99].forEach((frequency, index) => {
-      const oscillator = audioContext.createOscillator();
-      const gain = audioContext.createGain();
-      oscillator.type = "sine";
-      oscillator.frequency.value = frequency;
-      gain.gain.setValueAtTime(0.0001, now + index * .18);
-      gain.gain.exponentialRampToValueAtTime(.035, now + index * .18 + .04);
-      gain.gain.exponentialRampToValueAtTime(.0001, now + index * .18 + .55);
-      oscillator.connect(gain);
-      gain.connect(audioContext.destination);
-      oscillator.start(now + index * .18);
-      oscillator.stop(now + index * .18 + .6);
-    });
-  } catch (error) {
-    showToast("Audio is not available in this browser.");
-  }
-}
-musicToggle.addEventListener("click", async () => {
-  musicOn = !musicOn;
-  musicToggle.setAttribute("aria-pressed", String(musicOn));
-  if (musicOn) {
-    try {
-      audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
-      await audioContext.resume();
-      playChime();
-      chimeTimer = window.setInterval(playChime, 5200);
-      showToast("A little music for this moment. ♫");
-    } catch (error) {
-      musicOn = false;
-      musicToggle.setAttribute("aria-pressed", "false");
-      showToast("Audio could not start in this browser.");
-    }
-  } else {
-    window.clearInterval(chimeTimer);
-    showToast("Music turned off.");
-  }
-});
