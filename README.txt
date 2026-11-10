@@ -1,6 +1,6 @@
-NISHA BIRTHDAY WEBSITE — 14 DECEMBER
+NISHA BIRTHDAY WEBSITE — HINGLISH UPDATE
 
-Upload index.html, style.css, script.js and the photos folder to the root of your GitHub repository.
-Do not rename or separate the files. Keep photos/nisha-1.webp through nisha-4.webp together.
-GitHub Pages: Settings > Pages > Deploy from a branch > main > /(root) > Save.
-Flow: welcome page > four photo memories with individual notes > mini heart-catching game > birthday wish > four-photo album.
+Upload index.html, style.css, script.js and the complete photos folder to the root of the GitHub repository.
+The photos folder must contain nisha-1.webp, nisha-2.webp, nisha-3.webp, nisha-4.webp.
+Flow: welcome > four photo notes in Hinglish > love matching game (match 3 pairs) > birthday wish > photo album.
+GitHub Pages: Settings > Pages > Deploy from a branch > main > /(root).

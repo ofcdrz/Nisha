@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#3b172b">
-<title>Happy Birthday Nisha ♡</title>
+<title>Nisha Ke Naam — 14 December ♡</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -13,19 +13,22 @@
 <body>
 <div class="ambient"></div>
 <header class="site-header">
-  <a class="brand" href="#" aria-label="Nisha's birthday">for Nisha <span>♡</span></a>
-  <span class="date-tag">14 DECEMBER</span>
+  <a class="brand" href="#" aria-label="Nisha ke naam">
+    <span class="brand-mark">♡</span>
+    <span class="brand-copy"><strong>Ek Chhoti Si Duniya</strong><small>sirf Nisha ke naam</small></span>
+  </a>
+  <span class="date-tag">14 DECEMBER <span>✦</span></span>
 </header>
 
 <main>
   <section class="page active" id="welcome">
     <div class="welcome-card">
       <div class="sparkle">✦ &nbsp; ✧ &nbsp; ✦</div>
-      <p class="eyebrow">A LITTLE SURPRISE IS WAITING</p>
-      <h1>For someone<br>who makes life<br><em>more beautiful.</em></h1>
-      <p class="intro-copy">Nisha, this little corner of the internet<br>was made especially for you.</p>
-      <button class="btn btn-primary" id="begin">Open your surprise <span>♡</span></button>
-      <p class="small-note">A little love, one page at a time.</p>
+      <p class="eyebrow">EK CHHOTA SA SURPRISE TUMHARE LIYE</p>
+      <h1>Kuch khaas<br>hai tumhare liye,<br><em>Nisha...</em></h1>
+      <p class="intro-copy">Tumhari smile aur tumhari yaadon ke naam,<br>ye chhoti si website sirf tumhare liye banayi hai.</p>
+      <button class="btn btn-primary" id="begin">Surprise dekho <span>♡</span></button>
+      <p class="small-note">Har page mein thoda sa pyaar chhupa hai.</p>
     </div>
   </section>
 
@@ -33,18 +36,18 @@
     <div class="memory-layout">
       <div class="memory-photo-wrap">
         <div class="photo-count" id="photoCount">01 / 04</div>
-        <img id="memoryPhoto" src="photos/nisha-1.webp" alt="Nisha — memory 1">
-        <div class="photo-caption">A moment worth keeping ♡</div>
+        <img id="memoryPhoto" src="photos/nisha-1.webp" alt="Nisha ki yaad 1">
+        <div class="photo-caption">Ek pyaari si yaad ♡</div>
       </div>
       <div class="memory-message">
-        <p class="eyebrow" id="memoryEyebrow">A LITTLE NOTE FOR YOU · 01</p>
+        <p class="eyebrow" id="memoryEyebrow">TUMHARE LIYE EK CHHOTI SI BAAT · 01</p>
         <p class="script-word">Dear Nisha,</p>
-        <h2 id="memoryTitle">Your smile makes<br>ordinary days special.</h2>
-        <p class="memory-copy" id="memoryCopy">Some people bring a little extra warmth wherever they go. You have that kind of magic. Keep smiling and being your lovely self.</p>
+        <h2 id="memoryTitle">Tumhari smile<br>har din special bana deti hai.</h2>
+        <p class="memory-copy" id="memoryCopy">Kuch log apni presence se har jagah khushi bhar dete hain. Tum bhi unhi mein se ho. Hamesha aise hi muskurati rehna aur apni simplicity se sabka dil jeetti rehna.</p>
         <div class="progress"><span id="progressFill"></span></div>
         <div class="memory-controls">
-          <span class="step-label" id="stepLabel">MEMORY 1 OF 4</span>
-          <button class="btn btn-primary" id="nextMemory">Next memory <span>→</span></button>
+          <span class="step-label" id="stepLabel">YAAD 1 / 4</span>
+          <button class="btn btn-primary" id="nextMemory">Agli yaad dekho <span>→</span></button>
         </div>
       </div>
     </div>
@@ -52,16 +55,21 @@
 
   <section class="page" id="game">
     <div class="game-card">
-      <p class="eyebrow">A TINY BIRTHDAY GAME</p>
-      <h2>Catch the hearts<br><em>for Nisha!</em></h2>
-      <p class="game-intro">Tap the floating hearts and collect 10 of them to unlock your birthday wish.</p>
-      <div class="game-stats"><span>HEARTS COLLECTED</span><strong><b id="score">0</b> / 10</strong></div>
-      <div class="play-area" id="playArea" aria-label="Tap the floating hearts to collect them">
-        <div class="game-hint" id="gameHint">Tap a heart to catch it ♡</div>
+      <p class="eyebrow">CHHOTA SA LOVE GAME</p>
+      <h2>Dil ke jode<br><em>milao, Nisha!</em></h2>
+      <p class="game-intro">Neeche cards ko ek-ek karke tap karo. Same hearts ki 3 pairs dhoondhni hain. Dekhte hain kitni jaldi milte hain! ♡</p>
+      <div class="game-stats"><span>MATCHES MIL GAYE</span><strong><b id="score">0</b> / 3</strong></div>
+      <div class="match-grid" id="matchGrid" aria-label="Love matching game">
+        <button class="match-card" data-index="0" aria-label="Hidden card">♡</button>
+        <button class="match-card" data-index="1" aria-label="Hidden card">♡</button>
+        <button class="match-card" data-index="2" aria-label="Hidden card">♡</button>
+        <button class="match-card" data-index="3" aria-label="Hidden card">♡</button>
+        <button class="match-card" data-index="4" aria-label="Hidden card">♡</button>
+        <button class="match-card" data-index="5" aria-label="Hidden card">♡</button>
       </div>
       <div class="game-bottom">
-        <span id="gameStatus">Ready when you are!</span>
-        <button class="btn btn-primary" id="startGame">Start game</button>
+        <span id="gameStatus">Ready? Chalo shuru karein!</span>
+        <button class="btn btn-primary" id="resetGame">Phir se khelo ↻</button>
       </div>
     </div>
   </section>
@@ -69,39 +77,39 @@
   <section class="page" id="final">
     <div class="final-card">
       <div class="final-sparkle">✦</div>
-      <p class="eyebrow">14 DECEMBER · YOUR SPECIAL DAY</p>
+      <p class="eyebrow">14 DECEMBER · TUMHARA SPECIAL DAY</p>
       <p class="final-script">Happy Birthday</p>
       <h1>Nisha <span>♡</span></h1>
-      <p class="final-message">May your days be filled with genuine smiles, peaceful moments, beautiful surprises and people who make you feel loved. May this new year of your life bring you closer to every dream you're holding in your heart.</p>
-      <p class="wish-line">Keep shining. Keep smiling. Keep being you. ♡</p>
-      <button class="btn btn-primary" id="openAlbum">Open our little photo album <span>↗</span></button>
+      <p class="final-message">Janamdin ki bahut saari wishes, Nisha! Tumhari life hamesha khushiyon, sukoon, pyaar aur khoobsurat surprises se bhari rahe. Tumhare har sapne ko nayi udaan mile, har din ek nayi smile laaye aur tumhe hamesha woh sab mile jo tumhare dil ko khushi de.</p>
+      <p class="wish-line">Hamesha khush rehna, muskurate rehna aur aisi hi pyaari rehna. ♡</p>
+      <button class="btn btn-primary" id="openAlbum">Hamari photo gallery dekho <span>↗</span></button>
     </div>
   </section>
 
   <section class="page" id="album">
     <div class="album-heading">
-      <p class="eyebrow">A FEW MOMENTS, A LOT OF MEMORIES</p>
-      <h2>Nisha's little album <span>♡</span></h2>
-      <p>Four pictures. Countless reasons to smile.</p>
+      <p class="eyebrow">KUCH TASVEEREIN, DHER SAARI YAadein</p>
+      <h2>Nisha ki little gallery <span>♡</span></h2>
+      <p>Chaar photos, aur har ek ke saath ek pyaari si yaad.</p>
     </div>
     <div class="album-grid">
-      <button class="album-item" data-photo="0"><img src="photos/nisha-1.webp" alt="Nisha portrait 1"><span>01 · A lovely moment</span></button>
-      <button class="album-item" data-photo="1"><img src="photos/nisha-2.webp" alt="Nisha portrait 2"><span>02 · A beautiful smile</span></button>
-      <button class="album-item" data-photo="2"><img src="photos/nisha-3.webp" alt="Nisha photo collage"><span>03 · Little details</span></button>
-      <button class="album-item" data-photo="3"><img src="photos/nisha-4.webp" alt="Nisha portrait 4"><span>04 · Simply you</span></button>
+      <button class="album-item" data-photo="0"><img src="photos/nisha-1.webp" alt="Nisha photo 1"><span>01 · Pyaari si smile</span></button>
+      <button class="album-item" data-photo="1"><img src="photos/nisha-2.webp" alt="Nisha photo 2"><span>02 · Ek khoobsurat pal</span></button>
+      <button class="album-item" data-photo="2"><img src="photos/nisha-3.webp" alt="Nisha photo 3"><span>03 · Chhoti chhoti baatein</span></button>
+      <button class="album-item" data-photo="3"><img src="photos/nisha-4.webp" alt="Nisha photo 4"><span>04 · Bas tum</span></button>
     </div>
-    <button class="btn btn-outline" id="backToWish">Back to birthday wish</button>
+    <button class="btn btn-outline" id="backToWish">Birthday wish par wapas jao</button>
   </section>
 </main>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="closeLightbox" aria-label="Close photo">×</button>
-  <button class="lightbox-arrow prev" id="prevPhoto" aria-label="Previous photo">‹</button>
-  <img id="lightboxImage" src="" alt="Selected Nisha photo">
-  <button class="lightbox-arrow next" id="nextPhoto" aria-label="Next photo">›</button>
+  <button class="lightbox-close" id="closeLightbox" aria-label="Photo band karo">×</button>
+  <button class="lightbox-arrow prev" id="prevPhoto" aria-label="Pichhli photo">‹</button>
+  <img id="lightboxImage" src="" alt="Nisha ki photo">
+  <button class="lightbox-arrow next" id="nextPhoto" aria-label="Agli photo">›</button>
   <span id="lightboxCount"></span>
 </div>
-<footer>MADE WITH CARE, JUST FOR NISHA <span>♡</span></footer>
+<footer>YE CHHOTI SI DUNIYA SIRF NISHA KE NAAM <span>♡</span></footer>
 <script src="script.js"></script>
 </body>
 </html>
